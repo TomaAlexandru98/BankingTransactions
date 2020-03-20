@@ -6,25 +6,30 @@ namespace BankingTransactions.Abstractions
 {
     public abstract class Bank
     {
+        private BankData Data = new BankData();
         public int Id { get; set; }
 
         public string Name { get; set; }
 
         public void Transfer()
         {
-            Console.WriteLine("Enter your name :");
-            Console.ReadLine();
+            Data.GetDataFromConsole();
 
-            Console.WriteLine("Enter your IBAN :");
-            Console.ReadLine();
+            if(CheckDataFromConsole() == true)
+            {
+                PrintTransactionSucced();
+                return;
+            }
 
-            Console.WriteLine("Enter the amount of money :");
-            Console.ReadLine();
-
-            ShowMessage();
+            PrintTransactionFailed();
         }
 
-        public abstract void ShowMessage();
+        public abstract void PrintTransactionSucced();
+        public abstract void PrintTransactionFailed();
         
+        public Boolean CheckDataFromConsole()
+        {
+            return true;
+        }
     }
 }

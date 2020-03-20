@@ -7,9 +7,14 @@ namespace BankingTransactions.Banks
 {
     public class BancaTransilvania : Bank
     {
-        public override void ShowMessage()
+        public override void PrintTransactionFailed()
         {
-            Console.WriteLine("Banca Transilvania : Transaction succed");
+            Console.WriteLine("BancaTransilvania : Transaction Succed");
+        }
+
+        public override void PrintTransactionSucced()
+        {
+            Console.WriteLine("BancaTransilvania : Transaction failed");
         }
     }
 }

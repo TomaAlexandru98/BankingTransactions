@@ -6,9 +6,14 @@ namespace BankingTransactions.Cards
 {
     public class Visa : Card
     {
-        public override void ShowMessage()
+        public override void PrintTransactionFailed()
         {
-            Console.WriteLine("Transaction succed with card Visa");
+            Console.WriteLine("Visa : Transaction failed ");
+        }
+
+        public override void PrintTransactionSucced()
+        {
+            Console.WriteLine("Visa : Transaction succed ");
         }
     }
 }

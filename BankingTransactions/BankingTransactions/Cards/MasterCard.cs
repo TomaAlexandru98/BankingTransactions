@@ -6,9 +6,14 @@ namespace BankingTransactions.Cards
 {
     public class MasterCard : Card
     {
-        public override void ShowMessage()
+        public override void PrintTransactionFailed()
         {
-            Console.WriteLine("Transaction succed with card MasterCard");
+            Console.WriteLine("MasterCard : Transaction failed ");
+        }
+
+        public override void PrintTransactionSucced()
+        {
+            Console.WriteLine("MasterCard: Transaction succed ");
         }
     }
 }

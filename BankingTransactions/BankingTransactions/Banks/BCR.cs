@@ -7,9 +7,14 @@ namespace BankingTransactions.Banks
 {
     public class BCR : Bank
     {
-        public override void ShowMessage()
+        public override void PrintTransactionFailed()
         {
-            Console.WriteLine("BCR : Transaction succed");
+            Console.WriteLine("BCR : Transaction Succed");
+        }
+
+        public override void PrintTransactionSucced()
+        {
+            Console.WriteLine("BCR : Transaction failed");
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankingTransactions.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,19 +7,27 @@ namespace BankingTransactions
 {
     public abstract class Card
     {
+        private CardData Data = new CardData();
         public int Id { get; set; }
         public string Name { get; set; }
         public void Transfer()
         {
-            Console.WriteLine("Enter pin :");
-            Console.ReadLine();
+            Data.GetDataFromConsole();
+            
+            if (CheckDataFromConsole() == true)
+            {
+                PrintTransactionSucced();
+                return;
+            }
 
-            Console.WriteLine("Enter the amount of money :");
-            Console.ReadLine();
-
-            ShowMessage();
+            PrintTransactionFailed();
         }
 
-        public abstract void ShowMessage();
+        public abstract void PrintTransactionSucced();
+        public abstract void PrintTransactionFailed();
+        public Boolean CheckDataFromConsole()
+        {
+            return false;
+        }
     }
 }
