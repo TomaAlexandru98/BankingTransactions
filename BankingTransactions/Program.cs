@@ -10,7 +10,7 @@ namespace BankingTransactions
     {
         static void Main(string[] args)
         {
-            /* asda */
+            
             Console.WriteLine("******************************************Welcome to banking transactions***********************************************");
 
             IMenuBanks banksMenu = CreateBanksMenu();
